@@ -15,7 +15,12 @@ Icon
 .Spotlight-V100
 .Trashes
 node_modules/
-client/lib
+
+## Bower ##
+client/lib/react
+client/lib/jquery
+client/lib/lodash
+client/lib/underscore
 
 # Floobits
 .floo
