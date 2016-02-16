@@ -1,0 +1,24 @@
+{
+  "name": "AvalonMobile",
+  "version": "1.0.0",
+  "description": "client-side dependencies",
+  "homepage": "https://github.com/Rhombus33/AvalonMobile",
+  "authors": [
+    "Diamond Wheeler"
+  ],
+  "main": "",
+  "dependencies": {
+    "react": "~0.14.6",
+    "jquery": "~2.2.0",
+    "lodash": "~4.0.0",
+    "underscore": "~1.8.3"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "private": true
+}

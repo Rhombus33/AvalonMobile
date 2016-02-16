@@ -1,0 +1,25 @@
+{
+  "name": "AvalonMobile",
+  "version": "1.0.0",
+  "description": "server-side dependencies",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Rhombus33/AvalonMobile.git"
+  },
+  "author": "Diamond Wheeler <diamond.d.wheeler@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rhombus33/AvalonMobile/issues"
+  },
+  "homepage": "https://github.com/Rhombus33/AvalonMobile",
+  "dependencies": {
+    "body-parser": "^1.4.3",
+    "express": "^4.4.5",
+    "morgan": "^1.1.1"
+  },
+  "private": true
+}
