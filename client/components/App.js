@@ -7,42 +7,27 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      numOfPlayers: undefined,
-      names: undefined,
-      roles: undefined
+      players: undefined,
+      missions: undefined
     }
   }
 
-  setNumOfPlayers(num) {
+  setInitialGameVariables(gameVariables) {
+    
     this.setState({
-      numOfPlayers: num
+      players: gameVariables.players,
+      missions: gameVariables.missions 
     })
   }
-
-  setNames(names) {
-    // var names = input.join(',');
-    this.setState({
-      names: names
-    })
-  }
-
-  // setRoles(videoList) {
-  //   this.setState({
-  //     roles: roles
-  //   })
-  // }
 
   render(){
-    if (!this.state.numOfPlayers) {
-      console.log('should be in here');
-      return <div>
-                <Init setPlayers={this.setNumOfPlayers.bind(this)}
-                  setNames={this.setNames.bind(this)}/>
-              </div>
+    if (!this.state.players) {
+      return (<div>
+                <Init setInitialGameVariables={this.setInitialGameVariables.bind(this)} />
+              </div>);
     } else { 
-      var players = generatePlayers(this.state.names); //Returns object with name:role pairs
       return <div>
-                <Board players={players}/>
+                <Board players={this.state.players} missions={this.state.missions}/>
               </div>
     } 
   }

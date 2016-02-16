@@ -12,16 +12,16 @@ class Board extends React.Component {
     super(props);
 
     this.state = {
-      Players: props.players,
+      players: props.players,
       missions: props.missions,
       currentMission: 0,
       victor: undefined 
     }
   }
 
-  set(num) {
+  updateMissions(num) {
     this.setState({
-      numOfPlayers: num
+      missions: num
     })
   }
 
@@ -38,17 +38,11 @@ class Board extends React.Component {
   }
 
   render(){
-    if (!this.state.roles) {
-      return <div>
-                <Init setPlayers={this.setNumOfPlayers.bind(this)}
-                  setNames={this.setNames.bind(this)}
-                  setRoles={this.setRoles.bind(this)}/>
-              </div>
-    } else { 
-      var players = generatePlayers(this.state.names, this.state.roles); //Returns object with name:role pairs
-      return <div>
-                <Board players={players}/>
-              </div>
-    } 
+    console.log(this.state.players);
+    return  <div> 
+              {this.state.missions} 
+            </div>
   }
 }
+
+window.Board = Board;

@@ -7,25 +7,26 @@ class Init extends React.Component {
   
     this.state = {
       numOfPlayers: undefined,
-      nameInput: []
+      names: [],
+      setInitialGameVariables: props.setInitialGameVariables
     } 
   }
   
-
   setNumOfPlayers(event) {
     event.preventDefault();
-    console.log('event', event);
-    var input = React.findDOMNode(this.refs.num);
-    // var num = input.value.num;
-    // this.setState({
-    //   numOfPlayers: num
-    // })
+    var input = this.refs.numOfPlayers.value;
+    
+    this.setState({
+      numOfPlayers: input
+    })
   }
 
-  setNameInput(names) {
-    // var names = input.join(',');
+  addName(event) {
+    event.preventDefault();
+    var input = this.refs.playerName.value;
+
     this.setState({
-      namesInput: names
+      names: this.state.names.concat([input])
     })
   }
 
@@ -38,20 +39,33 @@ class Init extends React.Component {
   // }
 
   render(){
-    if (!this.state.numOfPlayers) {
-    console.log(this.numOfPlayers);
-    return   <div>
-                <form onSubmit={this.setNumOfPlayers}> 
+    var numOfPlayers = this.state.numOfPlayers;
+    var names = this.state.names;
+
+    if (!numOfPlayers) {
+    return   (<div>
+                <form onSubmit={this.setNumOfPlayers.bind(this)}> 
                   Enter number of adventuers: <br/>
-                  <input ref="num" type="text"/>
+                  <input ref="numOfPlayers" type="text"/>
                 </form>
+              </div>);
+    } else if (names.length < numOfPlayers) {
+    var namesEntered = names.map((name) => { return <li>{name}</li>; })
+    return   <div>
+                <form onSubmit={this.addName.bind(this)}> 
+                  Enter names of {numOfPlayers - names.length} adventuers: <br/>
+                  <input ref="playerName" type="text"/>
+                </form>
+                <ol>
+                {namesEntered}
+                </ol>
               </div>
     } else {
-    return   <div>
-                <form> 
-                  Enter adventuers: <br/>
-                  <input type="text"/>
-                </form>
+      var initVariables = generateBoard(names);
+      return  <div>
+                <button onClick={ (e) => { this.state.setInitialGameVariables(initVariables); } }>
+                WELCOME TO AVALON
+                </button>
               </div>
     }
   }
