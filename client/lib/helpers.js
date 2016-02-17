@@ -53,9 +53,9 @@ class Mission {
   constructor(missionSize, needDoubleFail) {
     this.size = missionSize;
     this.needDoubleFail = needDoubleFail;
-    this.fails = undefined;
+    this.fails = null;
     this.members = [];
-    this.success = undefined;
+    this.success = null;
   }
 }
 

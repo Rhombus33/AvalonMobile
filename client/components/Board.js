@@ -12,8 +12,8 @@ class Board extends React.Component {
     super(props);
 
     this.state = {
-      players: props.players,
-      missions: props.missions,
+      players: props.players, // {name: role}
+      missions: props.missions, // [mission{}, mission{}...]
       currentMission: 0,
       victor: undefined 
     }
@@ -38,12 +38,15 @@ class Board extends React.Component {
   }
 
   render(){
-    var missions = this.state.missions.map((mission) => { return <li>{mission.size}</li>; });
-
-    return  <div> 
-              {missions}
+    return  <div>
+              <div> 
+                <Missions missions={this.state.missions}/>
+              </div>
             </div>
   }
 }
 
 window.Board = Board;
+              // <div>
+              //   <GamePhase />
+              // </div>

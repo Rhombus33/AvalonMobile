@@ -22,11 +22,11 @@ class App extends React.Component {
 
   render(){
     if (!this.state.players) {
-      return (<div>
+      return (<div className="container">
                 <Init setInitialGameVariables={this.setInitialGameVariables.bind(this)} />
               </div>);
     } else { 
-      return  <div>
+      return  <div className="container">
                 <Board players={this.state.players} missions={this.state.missions}/>
               </div>
     } 

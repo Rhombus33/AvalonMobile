@@ -1,19 +1,42 @@
 body{
-
+  text-align: center;
 }
 
 .app {
-  background-color: red;
-  width: 100px;
-  height: 100px;
+
+}
+
+.container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto
 }
 
 #missions {
 
 }
 
-.single-mission {
+.adventurers {
+  width: 100px;
+  margin: auto;
+}
 
+.mission {
+  display: inline-block;
+  height: 180px;
+  width: 180px;
+  margin: 20px 20px 20px 20px;
+  padding: 30px 30px 30px 30px;
+  border: solid;
+  border-radius: 150px;
+}
+
+.fail {
+  background-color: red;
+}
+
+.succeed {
+  background-color: blue;
 }
 
 #game-phase {
