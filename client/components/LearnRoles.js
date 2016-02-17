@@ -3,8 +3,8 @@
 
 var LearnRoles = ({players}) => (
   <div>
-    {players.each(player => 
-        <Role role={player}/>
+    {players.map(player => 
+        <Role name={player[0]} role={player[1]}/>
         )}
   </div>
 )

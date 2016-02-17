@@ -35,7 +35,7 @@ class Init extends React.Component {
     var names = this.state.names;
 
     if (!numOfPlayers) {
-    return   (<div class="container">
+    return   (<div className="container">
                 <form onSubmit={this.setNumOfPlayers.bind(this)}> 
                   Enter number of adventurers: <br/>
                   <input ref="numOfPlayers" type="text"/>
@@ -43,7 +43,7 @@ class Init extends React.Component {
               </div>);
     } else if (names.length < numOfPlayers) {
     var namesEntered = names.map(name => { return <li>{name}</li>; })
-    return   <div class="container">
+    return   <div className="container">
                 <form onSubmit={this.addName.bind(this)}> 
                   Enter names of {numOfPlayers - names.length} adventurers: <br/>
                   <input ref="playerName" type="text"/>
@@ -53,10 +53,8 @@ class Init extends React.Component {
                 </ol>
               </div>
     } else {
-      console.log(names);
       var initVariables = generateBoard(names);
-      console.log(JSON.stringify(initVariables.missions[0]));
-      return  <div class="container">
+      return  <div className="container">
                 <button id='welcome' onClick={ (e) => { this.state.setInitialGameVariables(initVariables); } }>
                 WELCOME TO AVALON
                 </button>

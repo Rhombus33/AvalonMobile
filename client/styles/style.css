@@ -1,30 +1,42 @@
 body{
   text-align: center;
+  /*background-image: url(https://cf.geekdo-images.com/images/pic1813660.jpg);*/
+/*  background-image: url(http://www.castlewales.com/raglan01.jpg);*/
+  background-size: cover;
 }
 
 .app {
 
 }
 
+.learnRole {
+  font-size: 110%;
+  display: inline-block;
+  width: 10%;
+  margin: auto;
+  background-color: white;
+  opacity: 0.9;
+}
+
 .container {
-  display: block;
-  margin-left: auto;
-  margin-right: auto
 }
 
 #missions {
-
+  height: 50%;
+  background-color: #6666cc;
+  opacity: 0.9;
 }
 
 .adventurers {
   width: 100px;
   margin: auto;
+  background-color: white;
 }
 
 .mission {
   display: inline-block;
-  height: 180px;
-  width: 180px;
+  height: 160px;
+  width: 160px;
   margin: 20px 20px 20px 20px;
   padding: 30px 30px 30px 30px;
   border: solid;

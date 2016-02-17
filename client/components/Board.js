@@ -15,8 +15,15 @@ class Board extends React.Component {
       players: props.players, // {name: role}
       missions: props.missions, // [mission{}, mission{}...]
       currentMission: 0,
-      victor: undefined 
+      victor: undefined,
+      rolesLeft: props.players.length 
     }
+  }
+
+  finishRolePhase() {
+    this.setState({
+      learnRoles: this.rolesLeft - 1
+    })
   }
 
   updateMissionsDetails(num) {
@@ -37,20 +44,27 @@ class Board extends React.Component {
     })
   }
 
-  render(){
-    return  <div>
-              <div> 
-                <Missions missions={this.state.missions}/>
+  render() {
+    if (this.rolesLeft !== 0) {
+      return  <div>
+                <div id="missions"> 
+                  <Missions missions={this.state.missions}/>
+                </div>
+                <div>
+                  <LearnRoles players={this.state.players} finishRole={this.finishRolePhase.bind(this)}/>
+                </div>
               </div>
-            </div>
+    } else {
+      return  <div>
+          <div id="missions"> 
+            <Missions missions={this.state.missions}/>
+          </div>
+          <div>
+            <GamePhase players={this.state.players} finishRole={this.finishRolePhase.bind(this)}/>
+          </div>
+        </div>
+    }
   }
 }
 
 window.Board = Board;
-              // <div>
-              //   <GamePhase />
-              // </div>
-
-              // <div>
-              //   <LearnRoles players={this.state.players}/>
-              // </div>

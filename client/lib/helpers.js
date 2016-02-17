@@ -1,11 +1,10 @@
 var generateRoles = (num) => {
-  var Roles = ['Assasin', 'Merlin', 'Normal Good'];
+  var Roles = ['Assassin', 'Merlin', 'Normal Good'];
   if (num < 6) {
     Roles = Roles.concat(['Normal Good', 'Normal Baddie']);
   } else {
     var moreRoles = ['Percy', 'Morgana', 'Normal Good'];
     if (num % 2 === 0) {
-      console.log(num);
       for (var i = 0; i < (num - 6) / 2; i++) {
         moreRoles = moreRoles.concat(['Normal Good', 'Normal Baddie']);
       }
@@ -64,17 +63,14 @@ var generateBoard = (names) => {
   var roles = generateRoles(length);
   var missions = generateMissions(length);
 
-  var players = {};
+  var players = [];
   var shuffledNames = _.shuffle(names);
   var shuffledRoles = _.shuffle(roles);
-  // debugger;
   for (var i = 0; i < length; i++) {
-    players[shuffledNames[i]] = shuffledRoles[i];
+    players[i] = [shuffledNames[i], shuffledRoles[i]];
   }
   
   return {players: players, missions: missions};
 };
 
-// window.generateMissions = generateMissions;
-// window.generateRoles = generateRoles;
 window.generateBoard = generateBoard;

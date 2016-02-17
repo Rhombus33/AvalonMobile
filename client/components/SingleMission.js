@@ -15,10 +15,4 @@ var SingleMission = ({mission}) => (
   </div>
 );
 
-
-
 window.SingleMission = SingleMission;
-
-    // <p>
-    //   {listAttributes(mission)}
-    // </p>
