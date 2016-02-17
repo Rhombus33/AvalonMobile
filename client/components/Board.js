@@ -19,7 +19,7 @@ class Board extends React.Component {
     }
   }
 
-  updateMissions(num) {
+  updateMissionsDetails(num) {
     this.setState({
       missions: num
     })
@@ -49,4 +49,8 @@ class Board extends React.Component {
 window.Board = Board;
               // <div>
               //   <GamePhase />
+              // </div>
+
+              // <div>
+              //   <LearnRoles players={this.state.players}/>
               // </div>
