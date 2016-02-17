@@ -26,7 +26,7 @@ class App extends React.Component {
                 <Init setInitialGameVariables={this.setInitialGameVariables.bind(this)} />
               </div>);
     } else { 
-      return <div>
+      return  <div>
                 <Board players={this.state.players} missions={this.state.missions}/>
               </div>
     } 

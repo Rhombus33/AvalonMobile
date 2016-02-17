@@ -9,7 +9,7 @@ class Init extends React.Component {
       numOfPlayers: undefined,
       names: [],
       setInitialGameVariables: props.setInitialGameVariables
-    } 
+    }
   }
   
   setNumOfPlayers(event) {
@@ -29,14 +29,6 @@ class Init extends React.Component {
       names: this.state.names.concat([input])
     })
   }
-
-  // onSubmit(event){
-  //   event.preventDefault();
-  //   var input = React.findDOMNode(this.refs.num);
-  //   var newItem = input.value;
-  //   this.props.addEvent({ newItem });
-  //   input.value = '';
-  // }
 
   render(){
     var numOfPlayers = this.state.numOfPlayers;
@@ -61,6 +53,7 @@ class Init extends React.Component {
                 </ol>
               </div>
     } else {
+      console.log(names);
       var initVariables = generateBoard(names);
       return  <div>
                 <button onClick={ (e) => { this.state.setInitialGameVariables(initVariables); } }>

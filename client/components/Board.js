@@ -38,9 +38,10 @@ class Board extends React.Component {
   }
 
   render(){
-    console.log(this.state.players);
+    var missions = this.state.missions.map((mission) => { return <li>{mission.size}</li>; });
+
     return  <div> 
-              {this.state.missions} 
+              {missions}
             </div>
   }
 }
